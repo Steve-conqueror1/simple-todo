@@ -11,3 +11,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container{
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.login-form{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.login-form > form {
+  width: 70%;
+}
+
+.button{
+  margin-top: 20px;
+}
+
+.label{
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.label>label{
+  text-transform: uppercase;
+
+}
+
+.input > input{
+  width: 100%;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #2ecc71;
+}
+
+.input>input:focus{
+  outline: none;
+}
+
+.button>button{
+  color: #fff;
+  width: 100%;
+  padding: 6px;
+  background: #2ecc71;
+  border: 1px solid #2ecc71;
+  border-radius: 4px;
+}
+
+.button>button:hover{
+  cursor: pointer;
+}
