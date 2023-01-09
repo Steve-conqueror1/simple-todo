@@ -24,8 +24,11 @@ button:hover{
 
 .container{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding-top: 40px;
+  align-content: center;
+  align-items: center;
 }
 
 .login-form{
@@ -106,6 +109,8 @@ button:hover{
 
 }
 
+
+
 .todo-form{
   width: 80%;
 }
@@ -128,4 +133,15 @@ button:hover{
   margin-left: 10px;
   background: #2ecc71;
   color: #fff;
+}
+
+.todo-list{
+align-self: flex-start;
+  margin-left: 100px;
+}
+
+.todo-list > ul > li {
+  margin-top: 5px;
+  font-size: 20px;
+
 }

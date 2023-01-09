@@ -1,8 +1,13 @@
 import React, {ChangeEvent, FormEvent} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import { setTodosUpdated} from "../redux/slices";
+import {RootState} from "../redux";
 
 export const TodoForm: React.FC =()=> {
 
     const [todo, setTodo] = React.useState<string>('')
+    const dispatch = useDispatch()
+    const todosUpdated = useSelector((state: RootState) => state.todosUpdated)
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) =>{
         setTodo(event.currentTarget.value)
@@ -17,6 +22,7 @@ export const TodoForm: React.FC =()=> {
             localStorage.setItem('todos', JSON.stringify([...JSON.parse(storedTodos), todo]))
         }
         setTodo('')
+        dispatch(setTodosUpdated(!todosUpdated))
     }
 
     return (<div className="todo-form">

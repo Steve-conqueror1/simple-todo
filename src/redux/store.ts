@@ -1,9 +1,7 @@
 import {configureStore} from "@reduxjs/toolkit";
-import logginReducer from './slices'
+import RootReducer from './slices'
 export const store =  configureStore({
-    reducer: {
-       isLoggedIn: logginReducer
-    }
+    reducer: RootReducer
 })
 
 export type RootState = ReturnType<typeof store.getState>
