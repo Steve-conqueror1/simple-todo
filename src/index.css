@@ -18,6 +18,10 @@ a{
   font-size: 24px;
 }
 
+button:hover{
+  cursor: pointer;
+}
+
 .container{
   display: flex;
   justify-content: center;
@@ -102,3 +106,26 @@ a{
 
 }
 
+.todo-form{
+  width: 80%;
+}
+
+.todo{
+  padding: 10px;
+  width: 60%;
+  border: 1px solid #2ecc71;
+  border-radius: 5px;
+}
+
+.todo:focus{
+  outline: none;
+}
+
+.todo-form > form > button{
+  padding: 10px;
+  border: 1px solid #2ecc71;
+  border-radius: 5px;
+  margin-left: 10px;
+  background: #2ecc71;
+  color: #fff;
+}
