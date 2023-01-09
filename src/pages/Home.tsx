@@ -6,11 +6,6 @@ import {RootState} from "../redux";
 
 export const Home = () => {
     const isLoggedIn = useSelector((state: RootState) => state.isLoggedIn)
-
-    // React.useEffect(() => {
-        console.log('--------------------isLoggedIn------------------------------', isLoggedIn)
-    // }, [isLoggedIn])
-
     return (
         <div className="container">
             {isLoggedIn?

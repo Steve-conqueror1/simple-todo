@@ -1,6 +1,7 @@
 import React from "react";
 import {useSelector} from "react-redux";
 import {RootState} from "../redux";
+import {LogoutButton} from "./LogoutButton";
 
 export const TodoList:React.FC = () => {
     let todos = localStorage.getItem('todos');
@@ -8,14 +9,14 @@ export const TodoList:React.FC = () => {
 
     React.useEffect(() => {
         todos = localStorage.getItem('todos')
-        console.log('updating todos......')
     }, [todosUpdate])
 
     return (
         <div className="todo-list">
-        <ul>
-            {todos && JSON.parse(todos).map((todo: string) => <li>{todo}</li> )}
-        </ul>
+            {todos ? <ul>
+                {JSON.parse(todos).map((todo: string, key: number) => <li key={key}>{todo}</li> )}
+        </ul>: <h3>You don't have any todos</h3>}
+
     </div>
     )
 }
