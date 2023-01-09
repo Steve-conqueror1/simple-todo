@@ -1,8 +1,20 @@
-import {LoginForm} from "../components";
+import {HomeMessage, LoginForm} from "../components";
+import React from "react";
+import {useSelector} from "react-redux";
+import {RootState} from "../redux";
+
 
 export const Home = () => {
+    const isLoggedIn = useSelector((state: RootState) => state.isLoggedIn)
+
+    // React.useEffect(() => {
+        console.log('--------------------isLoggedIn------------------------------', isLoggedIn)
+    // }, [isLoggedIn])
+
     return (
         <div className="container">
-            <LoginForm/>
+            {isLoggedIn?
+            <HomeMessage/>:
+            <LoginForm/>}
         </div>)
 }

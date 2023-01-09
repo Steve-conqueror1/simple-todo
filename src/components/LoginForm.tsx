@@ -1,12 +1,14 @@
 import React, {ChangeEvent, FormEvent} from "react";
+import {setIsLoggedIn} from './../redux/slices'
+import {useDispatch} from "react-redux";
 
 interface LoginProps{
     login: string;
     password: string
 }
-export const LoginForm = () => {
+export const LoginForm:React.FC = () => {
     const [credentials, setCredentials] = React.useState<LoginProps>({login:'', password:''});
-
+    const dispatch = useDispatch()
 
     const handleChange = (event:  ChangeEvent<HTMLInputElement>) => {
         setCredentials({...credentials, [event.currentTarget.name]: event.currentTarget.value})
@@ -16,6 +18,7 @@ export const LoginForm = () => {
         event.preventDefault();
         localStorage.setItem('login', credentials.login)
         localStorage.setItem('password', credentials.password)
+        dispatch(setIsLoggedIn(true))
     }
 
     return (

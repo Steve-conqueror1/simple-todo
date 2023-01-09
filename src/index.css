@@ -12,6 +12,12 @@ code {
     monospace;
 }
 
+a{
+  text-decoration: none;
+  color: #2ecc71;
+  font-size: 24px;
+}
+
 .container{
   display: flex;
   justify-content: center;
@@ -63,3 +69,36 @@ code {
 .button>button:hover{
   cursor: pointer;
 }
+
+.welcome{
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+.welcome>span{
+  color: #2ecc71;
+  text-decoration: underline;
+}
+
+
+.logout{
+  margin-top: 20px;
+  position: relative;
+}
+
+.logout > button {
+  width: 150px;
+  padding: 5px;
+  position: absolute;
+  right: 10px;
+  color: #2ecc71;
+  background: #ffffff;
+  border: 1px solid #2ecc71;
+  border-radius: 5px;
+}
+
+.logout > button:hover{
+  cursor: pointer;
+
+}
+
